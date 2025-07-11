@@ -53,15 +53,15 @@ function App() {
         isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}>
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-between">            
+            <a href="#hero" className="flex items-center space-x-2">
               <SafeIcon icon={FiGlobe} className="text-2xl text-orange-500" />
               <h1 className={`text-2xl font-bold transition-colors ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
                 Webcrafted
               </h1>
-            </div>
+             </a>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#benefits" className={`transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-gray-700' : 'text-white'
@@ -91,8 +91,8 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 flex items-center">
+      {/* Hero Section */}      
+      <section id="hero" className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 flex items-center pt-20">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
@@ -111,7 +111,10 @@ function App() {
               >
                 <span>Book Your Free Website Plan</span>
                 <SafeIcon icon={FiArrowRight} className="ml-2" />
-              </button>          
+              </button> 
+              <p className="mt-6 text-orange-100">
+              ✓ No obligation • ✓ Free consultation • ✓ Custom strategy included
+              </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 float-animation">
@@ -334,11 +337,7 @@ function App() {
             >
               <SafeIcon icon={FiCalendar} />
               <span>Book Your Free Website Plan</span>
-            </button>
-            <div className="flex items-center space-x-2 text-orange-100">
-              <SafeIcon icon={FiPhone} />
-              <span>(214) 646-6778</span>
-            </div>
+            </button>            
           </div>
           <p className="mt-6 text-orange-100">
             ✓ No obligation • ✓ Free consultation • ✓ Custom strategy included
