@@ -111,11 +111,7 @@ function App() {
               >
                 <span>Book Your Free Website Plan</span>
                 <SafeIcon icon={FiArrowRight} className="ml-2" />
-              </button>
-              <div className="flex items-center space-x-2 text-gray-200">
-                <SafeIcon icon={FiPhone} className="text-orange-400" />
-                <span>(214) 646-6778</span>
-              </div>
+              </button>          
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 float-animation">
@@ -189,7 +185,7 @@ function App() {
               <SafeIcon icon={FiSettings} className="text-4xl text-orange-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4">Easy to Update</h3>
               <p className="text-gray-600">
-                Make changes yourself with our user-friendly system, or let us handle updates for you.
+                Sit back and relax while we take care of all the changes for you.
               </p>
             </div>
           </div>
