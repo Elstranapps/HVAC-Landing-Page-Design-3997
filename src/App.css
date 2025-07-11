@@ -12,21 +12,16 @@
   color: #374151;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom animations */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-
+/* Smooth scrolling anchor offset for hero */
 #hero {
   scroll-margin-top: 80px; /* adjust as needed */
 }
 
+/* Correct pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
   50% {
     opacity: 0.5;
   }
