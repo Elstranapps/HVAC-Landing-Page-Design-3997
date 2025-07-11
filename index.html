@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webcrafted - Turn Your HVAC Website Into a 24/7 Lead Machine</title>
+    <meta name="description" content="We design high-converting websites that book HVAC businesses more jobs. Get 3x more leads with our proven website strategies. Book your free consultation today." />
+    <meta name="keywords" content="HVAC website design, HVAC marketing, lead generation, website conversion, HVAC business growth" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://webcrafted.com/" />
+    <meta property="og:title" content="Webcrafted - Turn Your HVAC Website Into a 24/7 Lead Machine" />
+    <meta property="og:description" content="We design high-converting websites that book HVAC businesses more jobs. Get 3x more leads with our proven website strategies." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&h=630&fit=crop" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://webcrafted.com/" />
+    <meta property="twitter:title" content="Webcrafted - Turn Your HVAC Website Into a 24/7 Lead Machine" />
+    <meta property="twitter:description" content="We design high-converting websites that book HVAC businesses more jobs. Get 3x more leads with our proven website strategies." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&h=630&fit=crop" />
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS -->
+    <style>
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1e3a8a, #1e40af);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      
+      .loading-screen.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading" class="loading-screen">
+      <div>Loading your success story...</div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Hide loading screen once React app loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.getElementById('loading').classList.add('hidden');
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
