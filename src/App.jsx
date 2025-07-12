@@ -37,6 +37,7 @@ function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
+  const navRef = useRef(null); // Add ref for nav element
 
   // Handle scroll for navbar and menu
   useEffect(() => {
@@ -55,9 +56,11 @@ function App() {
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
-        // Check if clicked element is not the menu button
+        // Check if clicked element is not the menu button or nav links
         const menuButton = document.querySelector('.mobile-menu-button');
-        if (!menuButton || !menuButton.contains(e.target)) {
+        const navLinks = document.querySelector('.desktop-nav-links');
+        if ((!menuButton || !menuButton.contains(e.target)) && 
+            (!navLinks || !navLinks.contains(e.target))) {
           setIsMobileMenuOpen(false);
         }
       }
@@ -71,7 +74,7 @@ function App() {
     };
   }, [isMobileMenuOpen]);
 
-  // Close menu on escape key
+   // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -97,25 +100,31 @@ function App() {
 
   return (
     <div className="App">
-      {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent pointer-events-none'
-      }`}>
-        <div className="container mx-auto px-4 py-4">
+      {/* Navigation - UPDATED */}
+      <nav 
+        ref={navRef}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        }`}
+      >
+        {/* Add pointer-events-none only to the background, not the content */}
+        <div className={`absolute inset-0 ${!isScrolled ? 'pointer-events-none' : ''}`}></div>
+        
+        <div className="container mx-auto px-4 py-4 relative">
           <div className="flex items-center justify-between">            
-            <a href="#hero" className="flex items-center space-x-2 pointer-events-auto">
+            <a href="#hero" className={`flex items-center space-x-2 ${!isScrolled ? 'pointer-events-auto' : ''}`}>
               <SafeIcon icon={FiGlobe} className="text-2xl text-orange-500" />
               <h1 className={`text-2xl font-bold transition-colors ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
                 Webcrafted
               </h1>
-             </a>
+            </a>
 
             {/* Hamburger Icon for Mobile */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden focus:outline-none pointer-events-auto mobile-menu-button"
+              className={`md:hidden focus:outline-none ${!isScrolled ? 'pointer-events-auto' : ''} mobile-menu-button`}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
             >
@@ -125,8 +134,8 @@ function App() {
               />
             </button>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Navigation - UPDATED */}
+            <div className="hidden md:flex items-center space-x-8 desktop-nav-links">
               <a href="#benefits" className={`transition-colors hover:text-orange-500 ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
