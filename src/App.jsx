@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   const handleBookCall = () => {
-    window.open('https://calendly.com/freewebsiteplan ', '_blank');
+    window.open('https://calendly.com/freewebsiteplan', '_blank');
   };
 
   const toggleMobileMenu = () => {
@@ -113,7 +113,7 @@ function App() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white z-40 transform transition-transform duration-300 ${
+        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white z-60 transform transition-transform duration-300 ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
