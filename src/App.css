@@ -58,6 +58,7 @@
 
 .btn-hover-effect:hover::before {
   left: 100%;
+  pointer-events: none;
 }
 
 /* Mobile optimizations */
@@ -174,8 +175,9 @@ a:focus {
 }
 
 .mobile-menu-enter,
-.mobile-menu-leave-to {
+.mobile-menu {
   transform: translateX(-100%);
+  transform: transform 0.3s ease;
 }
 
 .mobile-menu-open {
@@ -246,4 +248,25 @@ a:focus {
   .mobile-menu-open {
     transform: translateX(0);
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* matches your header height */
 }
