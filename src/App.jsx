@@ -104,18 +104,20 @@ function App() {
               We design high-converting websites that book HVAC businesses more jobs. 
               Get 3x more leads with our proven website strategies.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
               <button
                 onClick={handleBookCall}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 btn-hover-effect cta-button flex items-center space-x-2"
-              >
+                >
                 <span>Book Your Free Website Plan</span>
                 <SafeIcon icon={FiArrowRight} className="ml-2" />
-              </button> 
-              <p className="mt-6 text-orange-100">
-              ✓ No obligation • ✓ Free consultation • ✓ Custom strategy included
-              </p>
+                </button> 
             </div>
+              <p className="text-center text-orange-100 mb-12">
+                ✓ No obligation • ✓ Free consultation • ✓ Custom strategy included
+              </p>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 float-animation">
                 <SafeIcon icon={FiTrendingUp} className="text-3xl text-orange-400 mx-auto mb-3" />
