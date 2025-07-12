@@ -28,12 +28,14 @@ const {
   FiTool,
   FiHome,
   FiWind,
-  FiMenu // Add this for the hamburger icon
+  FiMenu,
+  FiX
 } = FiIcons;
 
+// Rest of the component remains the same
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +49,6 @@ function App() {
     window.open('https://calendly.com/freewebsiteplan ', '_blank');
   };
 
-  // Function to toggle mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -116,55 +117,68 @@ function App() {
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="p-4">
-          {/* Close Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="focus:outline-none mb-4"
-          >
-            <SafeIcon icon={FiX} className="text-2xl text-gray-700" />
-          </button>
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-8">
+            <a href="#hero" onClick={toggleMobileMenu} className="flex items-center space-x-2">
+              <SafeIcon icon={FiGlobe} className="text-2xl text-orange-500" />
+              <h1 className="text-2xl font-bold text-gray-900">Webcrafted</h1>
+            </a>
+            {/* Close Button */}
+            <button
+              onClick={toggleMobileMenu}
+              className="focus:outline-none"
+            >
+              <SafeIcon icon={FiX} className="text-2xl text-gray-700" />
+            </button>
+          </div>
 
           {/* Mobile Menu Links */}
-          <ul className="space-y-4">
-            <li>
+          <div className="space-y-6 mt-8">
+            <a
+              href="#benefits"
+              onClick={toggleMobileMenu}
+              className="block py-3 text-lg font-medium text-gray-800 hover:text-orange-500 transition-colors border-b border-gray-100"
+            >
+              Benefits
+            </a>
+            <a
+              href="#process"
+              onClick={toggleMobileMenu}
+              className="block py-3 text-lg font-medium text-gray-800 hover:text-orange-500 transition-colors border-b border-gray-100"
+            >
+              Process
+            </a>
+            <a
+              href="#testimonials"
+              onClick={toggleMobileMenu}
+              className="block py-3 text-lg font-medium text-gray-800 hover:text-orange-500 transition-colors border-b border-gray-100"
+            >
+              Testimonials
+            </a>
+            
+            <div className="pt-6">
               <a
-                href="#benefits"
-                onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-orange-500 transition-colors"
-              >
-                Benefits
-              </a>
-            </li>
-            <li>
-              <a
-                href="#process"
-                onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-orange-500 transition-colors"
-              >
-                Process
-              </a>
-            </li>
-            <li>
-              <a
-                href="#testimonials"
-                onClick={toggleMobileMenu}
-                className="block text-gray-700 hover:text-orange-500 transition-colors"
-              >
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://calendly.com/freewebsiteplan "
+                href="https://calendly.com/freewebsiteplan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 block text-center"
+                onClick={toggleMobileMenu}
+                className="block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-center font-semibold transition-all duration-300"
               >
                 Get Started
               </a>
-            </li>
-          </ul>
+            </div>
+            
+            <div className="pt-8 border-t border-gray-100">
+              <div className="flex items-center space-x-4 text-gray-500">
+                <SafeIcon icon={FiPhone} className="text-xl" />
+                <span>Book a free call</span>
+              </div>
+              <div className="flex items-center space-x-4 text-gray-500 mt-4">
+                <SafeIcon icon={FiMail} className="text-xl" />
+                <span>info@webcrafted.com</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
