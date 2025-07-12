@@ -37,6 +37,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-fill-color: transparent;
 }
 
 /* Custom button hover effects */
@@ -80,6 +81,7 @@
 
 /* Testimonial card hover effect */
 .testimonial-card {
+  -webkit-transition: -webkit-transform 0.3s ease, box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -177,7 +179,7 @@ a:focus {
 .mobile-menu-enter,
 .mobile-menu {
   transform: translateX(-100%);
-  transform: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .mobile-menu-open {
@@ -240,7 +242,7 @@ a:focus {
     width: 100%;
     height: 100%;
     background-color: white;
-    z-index: 50;
+    z-index: 60;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
   }
@@ -269,4 +271,19 @@ a:focus {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* matches your header height */
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.animate-fade-in, 
+.animate-slide-up {
+  animation-fill-mode: both;
+}
+
+.float-animation, 
+.testimonial-card {
+  will-change: transform;
 }
