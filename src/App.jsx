@@ -268,7 +268,7 @@ function App() {
               </button> 
             </div>
             <p className="text-center text-orange-100 mb-12">
-              ✓ No obligation • ✓ Free consultation • ✓ Custom strategy included
+              ✓ No obligation  ✓ Free consultation  ✓ Custom strategy included
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 float-animation">
@@ -494,7 +494,7 @@ function App() {
             </button>            
           </div>
           <p className="mt-6 text-orange-100">
-            ✓ No obligation • ✓ Free consultation • ✓ Custom strategy included
+            ✓ No obligation  ✓ Free consultation  ✓ Custom strategy included
           </p>
         </div>
       </section>
